@@ -11,7 +11,7 @@ export function App() {
 
   return (
     <>
-      <HashRouter >
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/report_found" element={<ReportFound/> } />

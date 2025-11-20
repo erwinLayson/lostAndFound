@@ -1,8 +1,10 @@
 import {useNavigate} from "react-router-dom"
 
-
+// data
+import {  foundItemData } from "../assets/data/ItemData";
 export function ReportLinks() {
     const navigate = useNavigate();
+    const foundItem = foundItemData();
 
     return (
         <>
@@ -33,45 +35,17 @@ export function ReportLinks() {
 
                 <div className="flex flex-col md:grid md:grid-cols-3 gap-3">
                     {/* section 1 */}
-                    <div className="bg-gray-100 p-2 rounded-lg flex flex-col gap-3 items-start justify-center shadow-lg">
-                        <p className="text-md font-bold flex w-full justify-between">Bags <span className="text-[12px] font-semibold text-gray-500 bg-yellow-300/50 rounded-lg p-1">unclaimed</span></p>
+                    {foundItem.map(item => (
+                        <div className="bg-gray-100 p-2 rounded-lg flex flex-col gap-3 items-start justify-center shadow-lg">
+                            <p className="text-md font-bold flex w-full justify-between">{item.itemTitle} <span className="text-[12px] font-semibold text-gray-500 bg-yellow-300/50 rounded-lg p-1">{ item.status ? "claimed" : "Unclaimed"}</span></p>
 
-                        <p className="text-gray-700 text-sm">Bag Black</p>
-                        <p className="text-gray-700 text-sm flex w-full justify-between">Cafeteria <span>11/18/2025</span></p>
+                            <p className="text-gray-700 text-sm">{ item.description}</p>
+                            <p className="text-gray-700 text-sm flex w-full justify-between">{item.location} <span>{ item.dateFound}</span></p>
 
-                        <p className="text-sm text-gray-700 flex w-full justify-between">Bags <span className="text-blue-500 text-[11px] font-bold">View Details</span></p>
-                    </div>
-                    {/* section 2 */}
-                    <div className="bg-gray-100 p-2 rounded-lg flex flex-col gap-3 items-start justify-center shadow-lg">
-                        <p className="text-md font-bold flex w-full justify-between">Bags <span className="text-[12px] font-semibold text-gray-500 bg-yellow-300/50 rounded-lg p-1">unclaimed</span></p>
+                            <p className="text-sm text-gray-700 flex w-full justify-between">{ item.category} <span className="text-blue-500 text-[11px] font-bold cursor-pointer">View Details</span></p>
+                        </div>
+                    ))}
 
-                        <p className="text-gray-700 text-sm">Bag Black</p>
-                        <p className="text-gray-700 text-sm flex w-full justify-between">Cafeteria <span>11/18/2025</span></p>
-
-                        <p className="text-sm text-gray-700 flex w-full justify-between">Bags <span className="text-blue-500 text-[11px] font-bold">View Details</span></p>
-                    </div>
-                    {/* section 3 */}
-                    <div className="bg-gray-100 p-2 rounded-lg flex flex-col gap-3 items-start justify-center shadow-lg">
-                        <p className="text-md font-bold flex w-full justify-between">Bags <span className="text-[12px] font-semibold text-gray-500 bg-yellow-300/50 rounded-lg p-1">unclaimed</span></p>
-
-                        <p className="text-gray-700 text-sm">Bag Black</p>
-                        <p className="text-gray-700 text-sm flex w-full justify-between">Cafeteria <span>11/18/2025</span></p>
-
-                        <p className="text-sm text-gray-700 flex w-full justify-between">Bags <span className="text-blue-500 text-[11px] font-bold">View Details</span></p>
-                    </div>
-
-                    
-                    {/* section 4 */}
-                    <div className="bg-gray-100 p-2 rounded-lg flex flex-col gap-3 items-start justify-center shadow-lg">
-                        <p className="text-md font-bold flex w-full justify-between">Bags <span className="text-[12px] font-semibold text-gray-500 bg-yellow-300/50 rounded-lg p-1">unclaimed</span></p>
-
-                        <p className="text-gray-700 text-sm">Bag Black</p>
-                        <p className="text-gray-700 text-sm flex w-full justify-between">Cafeteria <span>11/18/2025</span></p>
-
-                        <p className="text-sm text-gray-700 flex w-full justify-between">Bags <span className="text-blue-500 text-[11px] font-bold">View Details</span></p>
-                    </div>
-
-                    
                 </div>
             </div>
         </>
