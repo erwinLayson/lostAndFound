@@ -49,7 +49,7 @@ export function ReportFound() {
     return (
         <>
             <Navbar />
-            <main className="flex flex-col gap-2 w-[90%] md:max-w-[60%] pt-[100px]">
+            <main className="flex pb-[50px] flex-col gap-2 w-[90%] md:max-w-[60%] pt-[100px]">
                 <h1 className="text-3xl font-bold">Report Found Item</h1>
                 <form onSubmit={handleFoundSubmit} className="shadow lg p-3 text-gray-500 flex flex-col rounded-md gap-3">
 
