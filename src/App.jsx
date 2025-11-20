@@ -1,5 +1,5 @@
 // Module 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 /*Components */
 import { Index } from "./Components/Index";
@@ -11,14 +11,14 @@ export function App() {
 
   return (
     <>
-      <BrowserRouter >
+      <HashRouter >
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/report_found" element={<ReportFound/> } />
           <Route path="/report_lost" element={<ReportLost/> } />
           <Route path="/admin" element={<AdminLoginPage/> } />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
